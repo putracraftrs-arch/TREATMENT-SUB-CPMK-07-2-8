@@ -1,14 +1,4 @@
-/* =========================================================
-   Portal Layanan Mahasiswa — script.js
-   Logika bersama untuk halaman formulir (index.html) dan
-   halaman data (data.html). Data disimpan di localStorage
-   supaya kedua halaman selalu menampilkan data yang sama
-   tanpa perlu server/backend.
-   ========================================================= */
-
 const STORAGE_KEY = "layananData";
-
-/* ---------- Helper: akses data di localStorage ---------- */
 
 function getData() {
   const raw = localStorage.getItem(STORAGE_KEY);
@@ -46,10 +36,6 @@ function jenisToBadgeClass(jenis) {
   };
   return map[jenis] || "";
 }
-
-/* =========================================================
-   Halaman Formulir (index.html)
-   ========================================================= */
 
 function initFormPage() {
   const form = document.getElementById("service-form");
@@ -173,10 +159,6 @@ function initFormPage() {
   });
 }
 
-/* =========================================================
-   Halaman Data (data.html)
-   ========================================================= */
-
 function initDataPage() {
   const tableBody = document.getElementById("table-body");
   if (!tableBody) return; // Bukan halaman data, keluar.
@@ -263,7 +245,6 @@ function initDataPage() {
   renderTable();
 }
 
-/* ---------- Jalankan sesuai halaman yang aktif ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   initFormPage();
   initDataPage();
