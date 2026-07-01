@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulir Layanan — Portal Layanan Mahasiswa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <span class="brand__mark">PL</span>
+      <span class="brand__text">
+        <span class="brand__title">Portal Layanan Mahasiswa</span>
+        <span class="brand__subtitle">Layanan Administrasi Akademik</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" class="is-active">Formulir</a>
+      <a href="data.html">Data Layanan</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-intro">
+    <div class="page-intro__eyebrow">Langkah 1 dari 1</div>
+    <h1>Ajukan Permintaan Layanan</h1>
+    <p>Lengkapi formulir di bawah ini. Nomor tiket akan dibuat otomatis dan datamu langsung tercatat pada halaman Data Layanan.</p>
+  </div>
+
+  <form class="ticket-layout" id="service-form" novalidate>
+    <div class="ticket-form-panel">
+
+      <div class="field" id="field-nama">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="cth. Siti Rahmawati" autocomplete="off">
+        <p class="field-error">Nama wajib diisi.</p>
+      </div>
+
+      <div class="field-row">
+        <div class="field" id="field-nim">
+          <label for="nim">NIM</label>
+          <input type="text" id="nim" name="nim" placeholder="cth. 2210511234" autocomplete="off" inputmode="numeric">
+          <p class="field-error">NIM wajib diisi.</p>
+        </div>
+
+        <div class="field" id="field-jenis">
+          <label for="jenis">Jenis Layanan</label>
+          <select id="jenis" name="jenis">
+            <option value="" disabled selected>Pilih jenis layanan</option>
+            <option value="Surat Keterangan Aktif Kuliah">Surat Keterangan Aktif Kuliah</option>
+            <option value="Legalisir Ijazah">Legalisir Ijazah</option>
+            <option value="Surat Rekomendasi">Surat Rekomendasi</option>
+            <option value="Cuti Akademik">Cuti Akademik</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+          <p class="field-error">Pilih salah satu jenis layanan.</p>
+        </div>
+      </div>
+
+      <div class="field" id="field-keterangan">
+        <label for="keterangan">Keterangan</label>
+        <textarea id="keterangan" name="keterangan" placeholder="Jelaskan keperluanmu secara singkat..."></textarea>
+        <p class="hint">Contoh: untuk keperluan pendaftaran beasiswa semester genap.</p>
+      </div>
+
+      <div class="btn-row">
+        <button type="submit" class="btn btn-primary">Kirim Permintaan</button>
+        <button type="reset" class="btn btn-ghost" id="reset-btn">Bersihkan</button>
+      </div>
+    </div>
+
+    <aside class="ticket-stub" aria-label="Pratinjau tiket">
+      <div class="ticket-stub__label">Nomor Tiket</div>
+      <div class="ticket-stub__id" id="preview-id">LYN-0000</div>
+
+      <dl>
+        <div class="ticket-stub__row">
+          <dt>Nama</dt>
+          <dd id="preview-nama" class="is-placeholder">Belum diisi</dd>
+        </div>
+        <div class="ticket-stub__row">
+          <dt>NIM</dt>
+          <dd id="preview-nim" class="is-placeholder">Belum diisi</dd>
+        </div>
+        <div class="ticket-stub__row">
+          <dt>Jenis Layanan</dt>
+          <dd id="preview-jenis" class="is-placeholder">Belum dipilih</dd>
+        </div>
+      </dl>
+
+      <p class="ticket-stub__note">Pratinjau ini diperbarui otomatis saat kamu mengetik, sebelum tiket benar-benar dikirim.</p>
+    </aside>
+  </form>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

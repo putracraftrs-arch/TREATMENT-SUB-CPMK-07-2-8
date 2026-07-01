@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Layanan — Portal Layanan Mahasiswa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <span class="brand__mark">PL</span>
+      <span class="brand__text">
+        <span class="brand__title">Portal Layanan Mahasiswa</span>
+        <span class="brand__subtitle">Layanan Administrasi Akademik</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Formulir</a>
+      <a href="data.html" class="is-active">Data Layanan</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-intro">
+    <div class="page-intro__eyebrow">Rekap</div>
+    <h1>Data Permintaan Layanan</h1>
+    <p>Seluruh permintaan yang sudah dikirim melalui formulir akan tercatat di tabel ini secara otomatis.</p>
+  </div>
+
+  <div class="table-toolbar">
+    <input type="search" id="search-input" placeholder="Cari nama, NIM, atau jenis layanan...">
+    <span class="table-count" id="table-count">0 data</span>
+  </div>
+
+  <div class="table-card">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Tiket</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Jenis Layanan</th>
+            <th>Keterangan</th>
+            <th>Tanggal</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Baris data diisi otomatis oleh JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="empty-state" id="empty-state" hidden>
+      <div class="empty-state__mark">＋</div>
+      <p>Belum ada data layanan.<br><a href="index.html">Isi formulir pertama</a> untuk mulai mencatat.</p>
+    </div>
+  </div>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>
